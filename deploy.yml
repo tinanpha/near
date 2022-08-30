@@ -1,0 +1,55 @@
+---
+version: "2.0"
+
+services:
+  ssh:
+    image: ubuntu:22.04
+    env:
+      - 'SSH_PUBKEY=ssh-rsa AAAAB3Nza......'
+    command:
+      - "sh"
+      - "-c"
+    args:
+      - 'apt-get update;
+      apt-get install -y --no-install-recommends -- ssh;
+      mkdir -p -m0755 /run/sshd;
+      mkdir -m700 ~/.ssh;
+      echo "$SSH_PUBKEY" | tee ~/.ssh/authorized_keys;
+      chmod 0600 ~/.ssh/authorized_keys;
+      ls -lad ~ ~/.ssh ~/.ssh/authorized_keys;
+      md5sum ~/.ssh/authorized_keys;
+      exec /usr/sbin/sshd -D'
+    expose:
+      # SSH
+      - port: 22
+        as: 22
+        to:
+          - global: true
+
+profiles:
+  compute:
+    ssh:
+      resources:
+        cpu:
+          units: 1.0
+        memory:
+          size: 1024Mi
+        storage:
+          size: 1024Mi
+  placement:
+    akash:
+      #attributes:
+      #  host: akash
+      #signedBy:
+      #  anyOf:
+      #    - "akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63"
+      pricing:
+        ssh:
+          denom: uakt
+          amount: 10000
+
+deployment:
+  ssh:
+    akash:
+      profile: ssh
+      count: 1
