@@ -5,7 +5,7 @@ services:
   ssh:
     image: ubuntu:22.04
     env:
-      - 'SSH_PUBKEY=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5ak3LOn0ptYXBZM0xHk6zuuiN4CXiJLoFHSonzDJS9CwR9Bxjx1AXqzfCB5yUeYluRLUr8Gd98dkbvHCPWMZ9COouplBebAeTKTyXDpLnNXQW5Iw/Iitik8VpqskXHBK2rs3rng0mWZwG78EiWVbmDaAAYZ1h8zBbtPmjfD7xoIyvrIOStu6mY/X47tcU5h2nr7/rX5QgugoY3zX55c6O7xHm9jNNg22jGml64GBvrun+FtKzyWIjUGAcRPs9Xop1xHrWm5lNC36Z3Ar1cNaykX6GnYQqFBs26kdSzzfuU/vMTsUWAD5wRiY+l2dZcFxHA3ReAK3EouXjia8V3uBkwSVJp8RmeBAWEywbi+gY1617FftN0oyjm6QXWxBzdpQUz3FGfHcyRGZvsNcXPckTys2rDd+MZ7/FX+z63idtXbHPk0W9ILK+9z7D6mWFY681SipX1MbCWkp2cnEQhkaSIeapjVGnYYiN7YCeK6SQzvmaFtL3mgkH7fz5rXVqowU= nguyens-mbp.lan'
+      - 'SSH_PUBKEY=ssh-rsa AAAAB3Nza......'
     command:
       - "sh"
       - "-c"
