@@ -12,6 +12,7 @@ services:
     args:
       - 'apt-get update;
       apt-get install -y --no-install-recommends -- ssh;
+      apt install sudo nano curl -y wget;
       mkdir -p -m0755 /run/sshd;
       mkdir -m700 ~/.ssh;
       echo "$SSH_PUBKEY" | tee ~/.ssh/authorized_keys;
