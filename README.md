@@ -11,12 +11,6 @@ ssh-keygen -t rsa -C $(hostname) -f "$HOME/.ssh/id_rsa" -P "" ; cat ~/.ssh/id_rs
 cd ~/.ssh ; ls
 
 
--Example listing of the local directory:
-
-scarruthers@Scotts-MBP .ssh % ls
-authorized_keys    aws-scott.pem    config        id_ed25519    id_ed25519.pub    id_rsa        id_rsa.pub    known_hosts    known_hosts.old
-
-
 -The id_rsa.pub file is your newly generated public key
 
 -List the contents of the public key
