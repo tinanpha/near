@@ -13,6 +13,8 @@ services:
       - 'apt-get update;
       apt-get install -y --no-install-recommends -- ssh;
       apt install sudo nano curl -y wget;
+      apt-get install systemd -y;
+      apt install systemctl -y;
       mkdir -p -m0755 /run/sshd;
       mkdir -m700 ~/.ssh;
       echo "$SSH_PUBKEY" | tee ~/.ssh/authorized_keys;
