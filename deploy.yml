@@ -32,7 +32,7 @@ profiles:
     ssh:
       resources:
         cpu:
-          units: 1.0
+          units: 2.0
         memory:
           size: 1024Mi
         storage:
